@@ -18,7 +18,7 @@ MAINTAINER Cedric Gatay <c.gatay@code-troopers.com>
 ARG VCS_REF
 ARG BUILD_DATE
 
-ARG BRANCH_NAME
+ENV BUILD_BRANCH=fa75451e
 
 LABEL org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="https://github.com/domoticz/domoticz" \
