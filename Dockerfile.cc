@@ -65,7 +65,7 @@ RUN   git clone --depth 2 https://github.com/OpenZWave/open-zwave.git /src/open-
       cd /src/open-zwave && \
       make && \
       ln -s /src/open-zwave /src/open-zwave-read-only && \
-      git clone -b ${BRANCH_NAME:-development} --depth 2 https://github.com/domoticz/domoticz.git /src/domoticz && \
+      git clone -b master --depth 2 https://github.com/domoticz/domoticz.git /src/domoticz && \
       cd /src/domoticz && \
       git fetch --unshallow && \
       cmake -DCMAKE_BUILD_TYPE=Release . && \
