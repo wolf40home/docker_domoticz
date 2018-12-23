@@ -1,6 +1,7 @@
 FROM alpine:3.7
 MAINTAINER Sylvain Desbureaux <sylvain@desbureaux.fr> #Original creator of this Dockerfile
 MAINTAINER Cedric Gatay <c.gatay@code-troopers.com>
+MAINTAINER Wolfgang Steiner <git@steinerwolfgang.de>
 
 # install packages &
 ## OpenZwave installation &
@@ -83,6 +84,22 @@ RUN apk add --no-cache \
 	make && \
 	make install && \
 	rm -rf /src/domoticz/ && \
+
+
+    # ensure pip is installed on python3
+	python3 -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip3 install --upgrade pip setuptools && \
+    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
+    if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
+    rm -r /root/.cache
+	
+	# add pip packages
+
+	pip install --no-cache-dir -U \
+		xmltodict
+
+
 	# Cleanup
 	apk del \ 
 		build-base cmake \
