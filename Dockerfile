@@ -29,7 +29,11 @@ LABEL org.label-schema.vcs-ref=$APP_HASH \
 
 RUN apk add --no-cache \
 		git \
+		bash \
+		mc \
 		python3-dev \
+		py3-lxml \
+		py3-pip \
 		build-base cmake \
 		boost-dev \
 		boost-thread \
@@ -81,7 +85,6 @@ RUN apk add --no-cache \
 	rm -rf /src/domoticz/ && \
 	# Cleanup
 	apk del \ 
-		git \
 		build-base cmake \
 		boost-dev \
 		sqlite-dev \
