@@ -15,7 +15,7 @@ Latest Domoticz git release.
 **Pull image**
 
 ```
-docker pull cgatay/domoticz:$VERSION
+docker pull wolf40home/domoticz:$VERSION
 
 ```
 
