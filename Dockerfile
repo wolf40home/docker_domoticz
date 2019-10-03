@@ -96,8 +96,7 @@ RUN apk add --no-cache \
 	
 	# add pip packages
 
-	pip install --no-cache-dir -U \	xmltodict
-
+        pip install -U xmltodict
 
 	# Cleanup
 	apk del \ 
