@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.10
 MAINTAINER Sylvain Desbureaux <sylvain@desbureaux.fr> #Original creator of this Dockerfile
 MAINTAINER Cedric Gatay <c.gatay@code-troopers.com>
 MAINTAINER Wolfgang Steiner <git@steinerwolfgang.de>
@@ -43,7 +43,7 @@ RUN apk add --no-cache \
 		boost-date_time \
 		sqlite sqlite-dev \
 		curl libcurl curl-dev \
-		libssl1.0 libressl-dev \
+		libressl-dev \
 		libusb libusb-dev \
 		libusb-compat libusb-compat-dev \
 		lua5.2-dev \
