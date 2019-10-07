@@ -35,7 +35,8 @@ RUN apk add --no-cache \
 		python3-dev \
 		py3-lxml \
 		py3-pip \
-		build-base cmake \
+		build-base \
+		cmake \
 		boost-dev \
 		boost-thread \
 		boost-system \
@@ -84,8 +85,6 @@ RUN apk add --no-cache \
 	make && \
 	make install && \
 	rm -rf /src/domoticz/ && \
-
-
     # ensure pip is installed on python3
 	python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
